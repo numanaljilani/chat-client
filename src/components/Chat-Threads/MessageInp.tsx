@@ -18,7 +18,7 @@ function MessageInp() {
     const [showEmojies, setShowEmojies] = useState<boolean>(false);
     const selectedUser = useSelectedUser((state) => state.selectedUser);
     const [cookie,setCookie]=useCookies(["user"])
-    const socket=io(process.env.BACK_END_URL!)
+    const socket=io("http://65.0.71.73:4000/")
 
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();

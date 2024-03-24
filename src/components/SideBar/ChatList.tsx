@@ -12,7 +12,7 @@ function ChatList({ mySelf }: { mySelf: userProps }) {
     (state:any) => ({ users: state.users, setUsers: state.setUsers }),
     shallow
   );
-  const socket=io(process.env.BACK_END_URL!)
+  const socket=io("http://65.0.71.73:4000/")
   useEffect(() => {
     socket.on("new-user", () => {
     fetchUsers(mySelf,setUsers)
